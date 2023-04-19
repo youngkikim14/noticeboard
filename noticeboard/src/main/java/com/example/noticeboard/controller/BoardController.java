@@ -25,10 +25,6 @@ public class BoardController {
         return boardService.createBoard(requestDto);
     }
 
-    @GetMapping("/list")
-    public List<BoardResponseDto> getBoardList(){
-        return boardService.getBoardList();
-    }
 
     @GetMapping("/{id}")
     public BoardResponseDto getBoard(@PathVariable Long id) {

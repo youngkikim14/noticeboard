@@ -8,5 +8,6 @@ public class BoardRequestDto {
     private String name;
     private String contents;
     private String password;
+    public String msg;
 
 }

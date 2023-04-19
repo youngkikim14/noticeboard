@@ -11,6 +11,7 @@ public class BoardResponseDto {
     private String title;
     private String name;
     private String contents;
+    public String msg;
 
     public BoardResponseDto(Board board) {
         this.id = id;
