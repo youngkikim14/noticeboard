@@ -5,6 +5,8 @@ import com.example.noticeboard.dto.BoardRequestDto;
 import com.example.noticeboard.dto.BoardResponseDto;
 import com.example.noticeboard.entity.Board;
 import com.example.noticeboard.service.BoardService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -16,7 +18,12 @@ import java.util.stream.Collectors;
 @RequestMapping("/board")
 public class BoardController {
 
-    private final BoardService boardService = new BoardService();
+    private final BoardService boardService;
+
+    @Autowired
+    public BoardController(BoardService boardService) {
+        this.boardService = boardService;
+    }
 
     @PostMapping("/create")
     public String createBoard(@RequestBody BoardRequestDto requestDto){

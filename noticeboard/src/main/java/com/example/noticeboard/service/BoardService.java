@@ -4,16 +4,20 @@ import com.example.noticeboard.dto.BoardRequestDto;
 import com.example.noticeboard.dto.BoardResponseDto;
 import com.example.noticeboard.entity.Board;
 import com.example.noticeboard.repository.BoardRepository;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
+@Service
 public class BoardService {
 
-    private final BoardRepository boardRepository = new BoardRepository();
+    private final BoardRepository boardRepository;
+
+    @Autowired
+    public BoardService(BoardRepository boardRepository) {
+        this.boardRepository = boardRepository;
+    }
 
     public String createBoard(BoardRequestDto requestDto){
 
