@@ -3,16 +3,11 @@ package com.example.noticeboard.controller;
 
 import com.example.noticeboard.dto.BoardRequestDto;
 import com.example.noticeboard.dto.BoardResponseDto;
-import com.example.noticeboard.entity.Board;
 import com.example.noticeboard.service.BoardService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/board")
